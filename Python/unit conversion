@@ -1,0 +1,53 @@
+# ask user which unit are you currently on
+# ask user which unit you want to convert to
+# ask a number
+# show conversion result
+
+print("Our goal is to convert between different units.")
+print("We provide cm, m, km, feet, inch, and miles\n")
+
+q1_text="Which unit are you converting from:  "
+initial_unit= input(q1_text)
+initial_unit=initial_unit.lower()
+
+q2_text="Which unit are you converting into:  "
+convert_unit= input(q2_text)
+convert_unit=convert_unit.lower()
+
+q3_text="How many "+initial_unit+" do you want to covert into "+convert_unit+": "
+value=input(q3_text)
+
+
+if initial_unit=="cm":
+    base_unit_value=int(value)/100
+if initial_unit=="m":
+    base_unit_value=int(value)
+if initial_unit=="km":
+    base_unit_value=int(value)*1000
+if initial_unit=="feet":
+    base_unit_value=int(value)*0.3048
+if initial_unit=="inch":
+    base_unit_value=int(value)*0.0254
+if initial_unit=="miles":
+    base_unit_value=int(value)*1609.34
+
+try:
+    
+    if convert_unit=="cm":
+        result=base_unit_value*100
+    if convert_unit=="m":
+        result=base_unit_value
+    if convert_unit=="km":
+        result=base_unit_value/1000
+    if convert_unit=="feet":
+        result=base_unit_value/0.3048
+    if convert_unit=="inch":
+        result=base_unit_value/0.0254
+    if convert_unit=="miles":
+        result=base_unit_value/1609.34
+
+    result=round(result,2)
+    print(value+" in "+initial_unit+" after conversion is " +str(result)+ convert_unit)
+
+except:
+    print("Invalid Unit")
