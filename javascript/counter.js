@@ -10,4 +10,6 @@ let counter=0;
     document.querySelector('button').onclick=count;
     }); 
         
+//addEventListener("the type of event you want to listen for", the function to run when the event is detected)
+                    //ex: click, scroll                            
         

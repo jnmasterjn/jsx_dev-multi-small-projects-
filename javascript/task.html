@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ToDo</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            document.querySelector('form').onsubmit=()=>{
+                const task= document.querySelector('#task').value;
+                console.log(task);
+
+                //stop the form submitting
+                return false;
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>Tasks</h1>
+    <ul id="tasks"></ul>
+    <form>
+        <form></form>
+        <input id="task" placeholder="Enter new task" type="text">
+        <input type="submit">
+    </form>
+</body>
+
+
+</html>
