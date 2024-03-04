@@ -7,18 +7,36 @@
 
 import SwiftUI
 
+//enum allows to group related values tgt
+enum Emoji: String, CaseIterable{
+    case 🥧,😍,🧃
+}
+
+
 struct ContentView: View {
+    @State var selection: Emoji = .🥧
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView{
+            VStack{
+                //first element in Vstack: Text
+                Text(selection.rawValue)
+                    .font(.system(size: 150))
+                
+                //second element in Vstack: Picker
+                Picker("Select Emoji", selection: $selection){
+                    ForEach(Emoji.allCases, id: \.self) {emoji in
+                        Text(emoji.rawValue)
+                    }
+                }
+                .pickerStyle(.wheel)
+            }
+            .navigationTitle("Cutie Pie")
+            .padding(50.0)
         }
-        .padding()
     }
 }
 
-#Preview {
+#Preview{
     ContentView()
 }
