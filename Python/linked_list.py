@@ -1,7 +1,6 @@
 #this is a python class that builds our own double linked list
 # None <- node1 -> <- node2 -> <- node3 -> <- None (double linked list)
 
-
 class Node:
     def __init__(self, data):
         self.item=data
