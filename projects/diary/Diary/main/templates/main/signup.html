@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="{% static 'main/style.css' %}" rel="stylesheet">
+        <title>SignUp</title>
+
+
+    </head>
+
+    <body>
+        <div>
+            <h1 class="nav-container">
+                My Diary App
+            </h1>
+        </div>
+
+        <div class="main-container">
+            <div class="head-container">
+                <h1>
+                    User: N/A
+                </h1>
+                
+                <h2>
+                    - Signup here
+                </h2>
+            </div>
+
+                <div class="diary-container">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        {% if error %}
+                        <h2 class="error">
+                            Error: {{ error }}
+                        </h2>
+                        {% endif %}
+
+                        <h1>
+                            Username:
+                        </h1>
+                        <input type="text" name="username" class="submit-input">
+                        
+                        <h1>
+                            Password:
+                        </h1>
+                        <input type="password" name="password" class="submit-input">
+
+                        <h1>
+                            Confirm Password:
+                        </h1>
+                        <input type="password" name="re_password" class="submit-input">
+
+                        <br>
+                        <br>
+                        <button type ="submit" class="submit-button"> Create Account </button>
+
+                        <br><br><br>
+                        <a href="{% url 'main:signin' %}"> Go back </a>
+                    </form>
+            </div>
+        </div>
+
+    </body>
+</html>

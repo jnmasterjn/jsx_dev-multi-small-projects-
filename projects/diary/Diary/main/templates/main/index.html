@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="{% static 'main/style.css' %}" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>Diary-Home</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>
+            Jn's Diary 
+        </h1>
+    </div>
+
+    <div class="nav-container">
+        <div class="head-container">
+            <h1>
+                User: {{request.user.username}} 
+            </h1>
+
+            <form method="get"> 
+                <input class="submit-input" type="text" name="search-area" placeholder="Search Title"> 
+                <button class="submit-button" type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="diary-container">
+
+        </div>
+
+        <div class="diary-container">
+            {% for diary in diarys%}
+            <div>
+                <h2 class="color-mark" id="color_mark_{{forloop.counter}}">
+                    {{diary.color}}
+                </h2>
+
+                <h2 id="created_time_{{ forloop.counter }}">
+                    {{diary.created}}
+                </h2>
+            </div> 
+
+            <h2>
+                {{ diary.title}}
+            </h2>
+
+            <a href=""> View / Update </a>
+            <a href=""> Delete </a>
+
+            <hr>
+
+            {% empty %}
+            <h2>
+                No Diary Found..
+            </h2>
+
+            {% endfor %}
+            
+            <a href =""> Create Diary</a>
+            <a href ="{% url 'main:index' %}"> View All Diary</a> 
+            <!-- url只有django看得懂 會把網址寫成html然後回傳 -->
+            <a href ="{% url 'main:signout' %}"> Logout</a>
+        </div>
+    </div>
+        
+    <script>
+        // timezone handle
+        var count = 0;
+        var year = 0, month = 0, day = 0, hour = 0 , minute = 0;
+        var created_time, processed_time, formatted_time;
+        var offset = new Date().getTimezoneOffset() / 60 //gettimezoneoffset 可以抓你的時區跟UTC時區的差別
+
+        var options = {
+            weekday: 'long' , year: 'numeric' , month: 'numeric' , day: 'numeric', 
+            month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit'
+        };
+
+
+        while(true){
+        try{
+            count += 1;
+            id_name = "created_time_" + count;
+            created_time = document.getElementById(id_name);
+            
+            year = parseInt(created_time.innerHTML.substr(21,4)); //4是開始的位子向右多少, (這裡的4就是2024 不知為什麼2024前面很多空格) 
+            month = parseInt(created_time.innerHTML.substr(26,2));
+            day = parseInt(created_time.innerHTML.substr(29,2));
+            hour = parseInt(created_time.innerHTML.substr(32,2));
+            minute = parseInt(created_time.innerHTML.substr(35,2));
+
+            processed_time = new Date(year, month-1, day, hour, minute);
+            processed_time.setHours(hour-offset); 
+            formatted_time = processed_time.toLocaleString("en-US",options);
+
+            created_time.innerHTML = formatted_time;
+
+        }catch{
+            break;
+        }
+    }
+
+        //color mark handle
+        count = 0;
+        var id_name;
+        var color;
+        var color_object;
+
+        while(true)
+
+            try{
+                
+            count += 1 
+            id_name = "color_mark_" + count; //javascript可以加兩個不同type
+
+            color_object = document.getElementById(id_name);
+            color = color_object.innerHTML;
+
+            color_object.style.backgroundColor = color;
+            color_object.innerHTML = "";
+        } catch{
+            break;
+        }
+    
+    </script>
+
+</body>
+</html>

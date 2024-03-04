@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(240, 212, 217);
+    height:110%;
+    background-blend-mode: soft-light;
+}
+a { 
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+}
+
+.home{
+    font-family: cursive;
+    font-size: x-large;
+  
+}
+
+.month{
+    margin:20px;
+    font-family:cursive;
+    text-align: center;
+    border:1px solid black;
+    padding:20px;
+}
+
+/* .jj{
+    text-align: center;
+    font-size: 20px;
+    margin:20px;
+    padding: 2px;
+    background-color: pink;
+    border-radius: 50px;
+
+} */
+
+.jj{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    background-color: pink;
+    padding: 10px;
+    margin-top: 50px;
+
+}
+
+.jd{
+    text-align: center;
+    font-size: 20px;
+    margin:20px;
+    padding: 2px;
+    border-radius: 50px;
+    background-color: pink;
+}
+
+.home{
+    text-align: center;
+    padding: 10px;
+    margin:10px;
+}

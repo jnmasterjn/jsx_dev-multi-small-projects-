@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SignIn</title>
+
+
+    </head>
+
+    <body>
+        <div>
+            <h1 class="nav-container">
+                My Diary App
+            </h1>
+        </div>
+
+        <div class="main-container">
+            <div class="head-container">
+                <h1>
+                    User: N/A
+                </h1>
+                
+                <h2>
+                    - Signin here
+                </h2>
+            </div>
+
+                <div class="diary-container">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        {% if error %}
+                        <h2 class="error">
+                            Error: Incorrect username or password
+                        </h2>
+                        {% endif %}
+
+                        <h1>
+                            Username:
+                        </h1>
+                        <input type="text" name="username" class="submit-input">
+                        <h1>
+                            Password:
+                        </h1>
+                        <input type="password" name="password" class="submit-input">
+
+                        <br>
+                        <button type ="submit" class="submit-button"> Login</button>
+
+                        <br><br><br>
+                        <a href="{% url 'main:signup' %}">Not a member? Create an account here</a>
+                    </form>
+            </div>
+        </div>
+    </body>
+</html>
