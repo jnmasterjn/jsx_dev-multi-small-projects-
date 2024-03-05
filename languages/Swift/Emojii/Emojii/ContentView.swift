@@ -9,7 +9,7 @@ import SwiftUI
 
 //enum allows to group related values tgt
 enum Emoji: String, CaseIterable{
-    case 🥧,😍,🧃
+    case 🥧,😍,🧃,😂
 }
 
 
@@ -31,7 +31,7 @@ struct ContentView: View {
                 }
                 .pickerStyle(.wheel)
             }
-            .navigationTitle("Cutie Pie")
+            .navigationTitle("Emoji")
             .padding(50.0)
         }
     }

@@ -23,7 +23,7 @@ with open('headlines.txt', 'w') as file:
         file.write(f"{link.text.strip()}")
 ''' 
 
-filename = "ai_headlines,march3rd"
+filename = "ai_headlines,march5"
 
 with open (filename,'w', encoding= 'utf-8') as file:
     articles = soup.find_all('h2')
