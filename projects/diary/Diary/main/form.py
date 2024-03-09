@@ -4,3 +4,4 @@ from .models import Diary
 class DiaryForm(forms.ModelForm): #繼承括號裡的
     class Meta:
         model = Diary
+        fields = ["title","body"] #可以編輯的地方

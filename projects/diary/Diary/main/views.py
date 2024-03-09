@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from main.models import Diary, Color
 from django.contrib.auth import authenticate,login,logout
+from .form import DiaryForm
 
 def index(request): #所有使用者cookie session 包起來
     if not request.user.is_authenticated:
@@ -67,7 +68,7 @@ def signup(request):
             error = "Username already exsist"
 
         else:
-            User.objects.create_user(username = username,password = password).save()
+            User.objects.create_user(username = username,password = password).save() #save = 創造
             return redirect (reverse_lazy("main:signin")) #如果創好帳號了就回去登入畫面
 
     return render(request, "main/signup.html",{
@@ -79,10 +80,36 @@ def signup(request):
     #reverse lazy 可以只給名字 不用講什麼html reverse lazy會幫你直接找urls.py裡面的name
 
 
-
-
 def signout(request):
     if request.user.is_authenticated:  
         logout(request)
     return redirect(reverse_lazy("main:signin"))  #signin 完之後要回到signin頁面
 
+def create (request):
+    if not request.user.is_authenticated:
+        return redirect(reverse_lazy("main:signin"))
+    
+    if request.method == "POST":
+        new_title = request.POST["title"]
+        new_color = request.POST["color"]
+        new_body = request.POST["body"]
+        
+        if new_color == "":
+            Diary(user = request.user, title = new_title, body = new_body).save()
+        
+        else:
+            new_color = Color.objects.get(color = new_color)
+            Diary(user = request.user,
+                  title = new_title,
+                  body = new_body,
+                  color = new_color).save()
+            
+        return redirect(reverse_lazy("main:index"))
+    
+    colors = Color.objects.all()
+    diary_form = DiaryForm()
+    
+    return render(request, "main/create.html", {
+        "form": diary_form,
+        "colors": colors,
+    })

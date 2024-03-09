@@ -48,7 +48,7 @@
                 {{ diary.title}}
             </h2>
 
-            <a href=""> View / Update </a>
+            <a href=""> View / Update </a> &nbsp;
             <a href=""> Delete </a>
 
             <hr>
@@ -59,8 +59,9 @@
             </h2>
 
             {% endfor %}
-            
-            <a href =""> Create Diary</a>
+
+            <!-- 顯示所有link -->
+            <a href ="{% url 'main:create' %}"> Create</a>
             <a href ="{% url 'main:index' %}"> View All Diary</a> 
             <!-- url只有django看得懂 會把網址寫成html然後回傳 -->
             <a href ="{% url 'main:signout' %}"> Logout</a>
