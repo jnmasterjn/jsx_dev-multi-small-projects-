@@ -107,9 +107,46 @@ def create (request):
         return redirect(reverse_lazy("main:index"))
     
     colors = Color.objects.all()
-    diary_form = DiaryForm()
+    diary_form = DiaryForm() #make object, empty 
     
     return render(request, "main/create.html", {
         "form": diary_form,
         "colors": colors,
+    })
+
+def update(request,current_id):
+    if not request.user.is_authenticated:
+        return redirect(reverse_lazy("main:signin"))
+    
+    #update diary stuff
+    if request.method == "POST":
+        new_title = request.POST["title"] #"title"跟html的tag name 一樣
+        new_color = request.POST["color"]
+        new_body = request.POST["body"]
+
+        Diary.objects.filter(id = current_id, user = request.user).update(title = new_title)
+        Diary.objects.filter(id = current_id, user = request.user).update(body = new_body)
+
+        if new_color != "" and new_color is not None:   #updating color is more special cos the user might choose to change color to no color, hence we need to check before updating. 
+            new_color = Color.objects.get(color = new_color)
+            Diary.objects.filter(id = current_id, user = request.user).update(color = new_color)
+        else:
+            Diary.objects.filter(id = current_id, user = request.user).update(color = None)
+
+        return redirect(reverse_lazy("main:index"))
+
+    #給user所有他們可以modify的東西
+    diary = Diary.objects.get(id = current_id, user = request.user)
+    color = Color.objects.all() #they can access to all color
+    form = DiaryForm(instance=diary) #空白的位置有之前的日記, not empty
+
+    if form.is_valid():
+        form.save() #if have instance, need "save" to change.
+
+    #return diary, color, form stuff so user can update about them
+    return render(request, "main/update.html", {
+        "diary": diary,
+        "colors": color,
+        "form": form,
+        #name : value
     })

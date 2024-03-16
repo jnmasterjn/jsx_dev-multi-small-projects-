@@ -48,7 +48,7 @@
                 {{ diary.title}}
             </h2>
 
-            <a href=""> View / Update </a> &nbsp;
+            <a href="{% url 'main:update' diary.id %}"> View / Update </a> &nbsp;
             <a href=""> Delete </a>
 
             <hr>
