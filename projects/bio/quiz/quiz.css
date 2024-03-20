@@ -1,4 +1,10 @@
 .question{
-    font-family: cursive;
+    font-family:cursive;
     font-size: large;
 }
+
+.button{
+    border-radius: 50px;
+    font-family: cursive;
+}
+
