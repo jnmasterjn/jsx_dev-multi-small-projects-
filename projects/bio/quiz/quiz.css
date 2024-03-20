@@ -1,6 +1,11 @@
+body{
+    background: 100%;
+}
+
 .question{
     font-family:cursive;
     font-size: large;
+    text-align: center;
 }
 
 .button{
@@ -8,3 +13,14 @@
     font-family: cursive;
 }
 
+.question-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
