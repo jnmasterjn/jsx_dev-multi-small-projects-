@@ -1,0 +1,109 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header nav .home-link:hover {
+    background-color: #0056b3;
+}
+
+main {
+    padding: 0 20px;
+}
+
+.content-block {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: #212529;
+    margin-bottom: 10px;
+}
+
+.content-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.video-embed {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border: none;
+    margin: 20px auto; /* Center the video within the content */
+}
+
+.steps-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.steps-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    text-indent: -20px; /* Aligns the text after bullet point numbers */
+}
+
+.steps-list li b {
+    font-weight: bold;
+    color: #d63384; /* Adds a touch of pink for academic emphasis */
+}
+
+h2.section-title {
+    font-size: 1.5em;
+    color: #d63384; /* Pink color for section titles to match the theme */
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.3em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 1px solid #dee2e6;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+/* Responsive design tweaks */
+@media (max-width: 768px) {
+    .video-embed {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* General styling tweaks for cleanliness */
+p, li {
+    line-height: 1.6;
+}
+
+img.content-image {
+    width: 500px; /* You specified this width inline, consider whether you want this fixed width or a responsive max-width: 100% */
+}
+
+/* Clearing up <br> and <b> tags by making them more semantic */
+b {
+    font-weight: normal;
+    color: #212529;
+}
+
+/* Remove any <br> tags from the HTML and handle spacing with CSS */
+br {
+    display: none;
+}

@@ -1,5 +1,9 @@
 body{
-    background: 100%;
+    background-color: #f4f4f4;
+}
+
+.home{
+    color: black;
 }
 
 .head{
@@ -8,10 +12,14 @@ body{
 
 .question{
     font-family:cursive;
-    font-size: large;
+    font-size:larger;
     text-align: center;
+    font-weight: bolder;
 }
-
+.button:hover{
+    transform: translateY(2px);
+    box-shadow: 0 10px 20px rgba(136, 133, 133, 0.2);
+}
 .button{
     border-radius: 50px;
     font-family: cursive;
@@ -34,6 +42,4 @@ body{
 
 .bigbox{
     margin-top: 50px;
-
-
 }
