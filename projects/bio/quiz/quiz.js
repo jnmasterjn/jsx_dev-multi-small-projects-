@@ -3,7 +3,7 @@ function AnsA(selectedanswer,btnElement){
         btnElement.style.backgroundColor = "green";
     } else{
         btnElement.style.backgroundColor = "red";
-        alert("Wrong");
+        alert("dumbass");
     }
 }
 
@@ -12,7 +12,7 @@ function AnsB(selectedanswer,btnElement){
         btnElement.style.backgroundColor = "green";
     } else{
         btnElement.style.backgroundColor = "red";
-        alert("Wrong");
+        alert("dumbass");
     }
 }
 
@@ -21,7 +21,7 @@ function AnsC(selectedanswer,btnElement){
         btnElement.style.backgroundColor = "green";
     } else{
         btnElement.style.backgroundColor = "red";
-        alert("Wrong");
+        alert("dumbass");
     }
 }
 
@@ -30,6 +30,6 @@ function AnsD(selectedanswer,btnElement){
         btnElement.style.backgroundColor = "green";
     } else{
         btnElement.style.backgroundColor = "red";
-        alert("Wrong");
+        alert("dumbass");
     }
 }

@@ -2,6 +2,10 @@ body{
     background: 100%;
 }
 
+.head{
+    font-family:cursive;
+}
+
 .question{
     font-family:cursive;
     font-size: large;
@@ -14,6 +18,7 @@ body{
 }
 
 .question-container{
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,4 +28,10 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.bigbox{
+    margin-top: 50px;
+
+
 }
