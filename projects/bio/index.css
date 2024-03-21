@@ -1,0 +1,78 @@
+/* General body styling */
+body {
+    font-family: 'Cursive', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the main containers */
+.note-container,
+.quiz-container {
+    list-style: none;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Styling for each note and quiz item */
+.note, .quiz {
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 5px solid #e68cdd;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Styling for the note and quiz text links */
+.note-text, .quiz-text {
+    text-decoration: none;
+    color: #ec61f1;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+}
+
+/* Hover effects for note and quiz items */
+.note:hover, .quiz:hover {
+    transform: translateX(10px);
+}
+
+/* Hover effects for text links */
+.note-text:hover, .quiz-text:hover {
+    color: #000000;
+}
+
+/* Styling for the section titles within the lists */
+.note-container li:first-child,
+.quiz-container li:first-child {
+    font-size: 16px;
+    color: #495057;
+    margin-bottom: 15px;
+}
+
+/* Home link styling */
+.home {
+    display: block;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.home:hover {
+    background-color: #0056b3;
+}
+
+.header{
+    font-family: cursive;
+    font-size: 20px;
+}
