@@ -32,7 +32,7 @@ body {
 /* Styling for the note and quiz text links */
 .note-text, .quiz-text {
     text-decoration: none;
-    color: #ec61f1;
+    color: #e53ceb;
     font-weight: bold;
     transition: color 0.2s ease-in-out;
 }
@@ -47,32 +47,12 @@ body {
     color: #000000;
 }
 
-/* Styling for the section titles within the lists */
-.note-container li:first-child,
-.quiz-container li:first-child {
-    font-size: 16px;
-    color: #495057;
-    margin-bottom: 15px;
-}
-
-/* Home link styling */
-.home {
-    display: block;
-    background-color: #007bff;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.home:hover {
-    background-color: #0056b3;
-}
-
 .header{
     font-family: cursive;
     font-size: 20px;
+}
+
+.note-container, .quiz-container{
+    margin-top: 50px;
+    font-weight: bold;
 }

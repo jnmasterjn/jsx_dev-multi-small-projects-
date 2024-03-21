@@ -15,6 +15,7 @@ body{
 .button{
     border-radius: 50px;
     font-family: cursive;
+    margin-bottom: 50px;
 }
 
 .question-container{
