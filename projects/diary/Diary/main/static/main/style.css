@@ -1,10 +1,141 @@
+
+.nav-container{
+    margin: 10px auto;
+    padding-top: 2px;
+    max-width: 600px; 
+    /* 配上margin auto 所以會幫你擠到中間 */
+    text-align: center;
+    color:rgb(60, 55, 55)
+}
+
+.main-container{
+    margin: 30px auto; 
+    max-width: 600px;
+    color:rgb(60, 55, 55);
+}
+
+.head-container{
+    background-color: #FEDFE1;
+    padding: 15px 30px 15px 30px;
+    border-radius: 30px 30px 0px 0px ;
+}
+
+.diary-container{
+    background-color: rgb(235, 235, 235);
+    padding: 15px 30px 15px 30px;
+    border-radius: 0px 0px 30px 30px;
+}
+
+.submit-input{
+    outline: none;
+    /* 沒有html預設很醜的那些特效 */
+    border-radius: 8px;
+    border-style: solid;
+
+    background-color: white;
+    color:rgb(60, 55, 55);
+    border-color: rgb(60, 55, 55);
+    border-width: 1.5px;
+
+    height: 30px;
+    width:200px;
+
+    margin-bottom: 25px;
+    margin-top: 5px;
+
+    font-size: 18px;
+}
+
+.submit-button{
+    outline: none;
+    border-radius: 8px;
+    border-style: solid;
+
+    background-color: white;
+    color:rgb(60, 55, 55);
+    border-color: rgb(60, 55, 55);
+    border-width: 1.5px;
+
+    height: 35px;
+    width:80px;
+
+    font-size: 18px;
+}
+
 .color-mark{
     float:right;
     width:20px;
     height:20px;
     border-radius: 15px;
-    opacity: 0.7;
+    opacity: 0.8;
     margin-top: 5px;
     margin-right:15px;
 }
 
+.error{
+    margin: 0;
+    margin-top: 15px;
+    color:red;
+}
+
+/* ck editor content */
+#id_title{
+    outline:none;
+    border-style: solid;
+    border-width: 1.4px;
+
+    display: block;
+    color: rgb(60, 55, 55);
+    border-color: #cecece;
+
+    margin-top: 13px;
+
+    font-size: 16px;
+}
+
+/* 分隔線 */
+hr{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+/* 輸入匡上面的文字說明 */
+label{
+    font-family: "Montserrat";
+    font-size: 16px;
+}
+
+select{
+    outline:none;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1.5px;
+
+    background-color: white;
+    color:rgb(60 ,55 ,55);
+    border-color: rgb(60, 55, 55);
+}
+
+a{
+    font-family: "Montserrat";
+    color:rgb(60, 55, 55);
+    margin-right: 25px;
+}
+
+h1{
+    font-family: "Montserrat";
+}
+
+h2{
+    font-family: "Montserrat";
+    font-weight: 300;
+}
+
+h3{
+    font-family: "Montserrat";
+    font-weight: 300;
+}
+
+.delete-warning{
+    color:red;
+}

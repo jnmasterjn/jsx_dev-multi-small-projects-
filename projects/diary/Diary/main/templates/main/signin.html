@@ -1,16 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>SignIn</title>
-
-
+        <title>Sign In</title>
+        <link href="{% static 'main/style.css' %}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <div>
             <h1 class="nav-container">
-                My Diary App
+                Jn's Diary
             </h1>
         </div>
 
@@ -21,7 +22,7 @@
                 </h1>
                 
                 <h2>
-                    - Signin here
+                    Signin Here
                 </h2>
             </div>
 
@@ -45,7 +46,7 @@
                         <input type="password" name="password" class="submit-input">
 
                         <br>
-                        <button type ="submit" class="submit-button"> Login</button>
+                        <button type ="submit" class="submit-button">Login</button>
 
                         <br><br><br>
                         <a href="{% url 'main:signup' %}">Not a member? Create an account here</a>

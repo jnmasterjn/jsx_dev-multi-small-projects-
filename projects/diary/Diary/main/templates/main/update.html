@@ -5,54 +5,56 @@
         <meta charset="UTF-8">
         <title>Update / View</title>
         <link href="{% static 'main/style.css' %}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     </head>
 
     <body> 
-        <div class="main-container">
-            <h1> Diary App</h1>
+        <div class="nav-container">
+            <h1> Jn's Diary</h1>
         </div>
 
-    <div class="new-container">
+    <div class="main-container">
         <div class="head-container">
             <h1> 
                 User. {{request.user.username}}
             </h1>
-            <h2> - view / update diary </h2>
+            <h2> View / Update Diary </h2>
         </div>
-    </div>
+    
 
-    <div class="diary-container">
-        <form method="post">
-            {% csrf_token %}
-            <!--form.media and as_p 可以生成html-->
-            {{ form.media }}
-            {{ form.as_p }}
+        <div class="diary-container">
+            <form method="post">
+                {% csrf_token %}
+                <!--form.media and as_p 可以生成html-->
+                {{ form.media }}
+                {{ form.as_p }}
 
-            <select name = "color">
-                
-                <!--update時下拉選單第一個選項一定是之前選好的那個顏色-->
-                {% if diary.color %}
-                <option value="{{diary.color}}">{{diary.color}}</option>
-                {% else %}
-                <option value="">No Color</option> 
-                {% endif %}
+                <select name = "color">
+                    
+                    <!--update時下拉選單第一個選項一定是之前選好的那個顏色-->
+                    {% if diary.color %}
+                    <option value="{{diary.color}}">{{diary.color}}</option>
+                    {% else %}
+                    <option value="">No Color</option> 
+                    {% endif %}
 
-                <!-- color裡有多少colors底下的html就跑幾次 -->
-                {% for color in colors %}
-                <option value="{{ color.color }}">{{color.color}}</option> <!--前面的color.color是傳回去的後面是印出來下拉選單的-->
-                {% endfor %}
+                    <!-- color裡有多少colors底下的html就跑幾次 -->
+                    {% for color in colors %}
+                    <option value="{{ color.color }}">{{color.color}}</option> <!--前面的color.color是傳回去的後面是印出來下拉選單的-->
+                    {% endfor %}
 
-                <!-- 沒有顏色就是 no color  -->
-                <option value="">No Color</option> 
-            </select>
+                    <!-- 沒有顏色就是 no color  -->
+                    <option value="">No Color</option> 
+                </select>
 
-            <br><br>
-            <button type="submit" class="submit-button"> Update </button>
+                <br><br>
+                <button type="submit" class="submit-button"> Update </button>
 
-            <br><br><br>
-            <a href="{% url 'main:index' %}"> Go Home </a>
-        </form>
+                <br><br><br>
+                <a href="{% url 'main:index' %}"> Go Home </a>
+            </form>
 
+        </div>
     </div>
     </body>
 </html>

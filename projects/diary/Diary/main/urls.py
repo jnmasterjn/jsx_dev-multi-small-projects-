@@ -9,5 +9,6 @@ urlpatterns = [
     path("signout/",views.signout, name="signout"),
     path("signup/", views.signup, name = "signup"),
     path("create/", views.create, name = "create"),
-    path("update/<int:current_id>", views.update, name = "update") #可以去抓網址後面的id, id不可能重複, 不管跨不跨user (coz the same database)
+    path("update/<int:current_id>", views.update, name = "update"), #可以去抓網址後面的id, id不可能重複, 不管跨不跨user (coz the same database)
+    path("delete/<int:current_id>", views.delete, name = "delete")
 ]

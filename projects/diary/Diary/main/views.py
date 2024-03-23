@@ -150,3 +150,14 @@ def update(request,current_id):
         "form": form,
         #name : value
     })
+
+def delete(request,current_id):
+    if not request.user.is_authenticated:
+        return redirect(reverse_lazy("main:signin"))
+    
+    if request.method == "POST":
+        Diary.objects.get(id = current_id, user = request.user).delete()
+        return redirect(reverse_lazy("main:index"))
+        
+
+    return render(request, "main/delete.html")

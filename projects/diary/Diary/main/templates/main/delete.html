@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Delete</title>
+        <link href="{% static 'main/style.css' %}" rel="stylesheet">
+        
+    </head>
+
+    <body> 
+        <div class="nav-container">
+            <h1> Jn's Diary</h1>
+        </div>
+
+    <div class="main-container">
+        <div class="head-container">
+            <h1> 
+                User. {{request.user.username}}
+            </h1>
+            <h2> Delete Diary </h2>
+        </div>
+    
+
+        <div class="diary-container">
+            <form method="post">
+                {% csrf_token %}
+
+                <h2 class="delete-warning">
+                    This action can't be recovered.
+                    <br><br>
+                    Are you sure you want to proceed?
+                </h2>
+
+                <button type="submit" class="submit-button"> Delete </button>
+
+                <br><br><br>
+                <a href="{% url 'main:index' %}"> Go Home </a>
+            </form>
+
+        </div>
+    </div>
+    </body>
+</html>

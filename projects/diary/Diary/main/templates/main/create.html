@@ -8,44 +8,45 @@
     </head>
 
     <body> 
-        <div class="main-container">
-            <h1> Diary App</h1>
+        <div class="nav-container">
+            <h1> Jn's Diary </h1>
         </div>
 
-    <div class="new-container">
+    <div class="main-container">
         <div class="head-container">
             <h1> 
                 User. {{request.user.username}}
             </h1>
-            <h2> - create new diary </h2>
+            <h2> Create New Diary </h2>
         </div>
-    </div>
+    
 
-    <div class="diary-container">
-        <form method="post">
-            {% csrf_token %}
-            <!--form.media and as_p 可以生成html-->
-            {{ form.media }}
-            {{ form.as_p }}
+        <div class="diary-container">
+            <form method="post">
+                {% csrf_token %}
+                <!--form.media and as_p 可以生成html-->
+                {{ form.media }}
+                {{ form.as_p }}
 
-            <select name = "color">
+                <select name = "color">
 
-                <!-- 沒有顏色就是 no color  -->
-                <option value="">No Color</option> 
+                    <!-- 沒有顏色就是 no color  -->
+                    <option value="">No Color</option> 
 
-                <!-- color裡有多少colors底下的html就跑幾次 -->
-                {% for color in colors %}
-                <option value="{{ color.color }}">{{color.color}}</option> <!--前面的color.color是傳回去的後面是印出來下拉選單的-->
-                {% endfor %}
-            </select>
+                    <!-- color裡有多少colors底下的html就跑幾次 -->
+                    {% for color in colors %}
+                    <option value="{{ color.color }}">{{color.color}}</option> <!--前面的color.color是傳回去的後面是印出來下拉選單的-->
+                    {% endfor %}
+                </select>
 
-            <br><br>
-            <button type="submit" class="submit-button"> Create </button>
+                <br><br>
+                <button type="submit" class="submit-button"> Create </button>
 
-            <br><br><br>
-            <a href="{% url 'main:index' %}"> Go Home </a>
-        </form>
+                <br><br><br>
+                <a href="{% url 'main:index' %}"> Go Home </a>
+            </form>
 
+        </div>
     </div>
     </body>
 </html>

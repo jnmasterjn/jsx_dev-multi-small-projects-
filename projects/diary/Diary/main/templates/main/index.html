@@ -4,21 +4,21 @@
 
 <head>
     <link href="{% static 'main/style.css' %}" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Diary-Home</title>
 </head>
 
 <body>
-    <div class="main-container">
+    <div class="nav-container">
         <h1>
             Jn's Diary 
         </h1>
     </div>
 
-    <div class="nav-container">
+    <div class="main-container">
         <div class="head-container">
-            <h1>
+            <h1 class="display-username">
                 User: {{request.user.username}} 
             </h1>
 
@@ -26,10 +26,6 @@
                 <input class="submit-input" type="text" name="search-area" placeholder="Search Title"> 
                 <button class="submit-button" type="submit">Search</button>
             </form>
-        </div>
-
-        <div class="diary-container">
-
         </div>
 
         <div class="diary-container">
@@ -49,7 +45,7 @@
             </h2>
 
             <a href="{% url 'main:update' diary.id %}"> View / Update </a> &nbsp;
-            <a href=""> Delete </a>
+            <a href="{% url 'main:delete' diary.id %}"> Delete </a>
 
             <hr>
 
