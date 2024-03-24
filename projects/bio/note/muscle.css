@@ -50,10 +50,11 @@ main {
     text-indent: -20px; /* Aligns the text after bullet point numbers */
 }
 
-.steps-list li b {
+.steps-list li b, b {
     font-weight: bold;
     color: #d63384; /* Adds a touch of pink for academic emphasis */
 }
+
 
 h2.section-title {
     font-size: 1.5em;
@@ -97,11 +98,7 @@ img.content-image {
     width: 500px; /* You specified this width inline, consider whether you want this fixed width or a responsive max-width: 100% */
 }
 
-/* Clearing up <br> and <b> tags by making them more semantic */
-b {
-    font-weight: normal;
-    color: #212529;
-}
+
 
 /* Remove any <br> tags from the HTML and handle spacing with CSS */
 br {
@@ -110,7 +107,9 @@ br {
 
 .home-link{
     margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;  
+}
 
-    
+.titin{
+    margin-bottom: 15px;
 }
