@@ -6,13 +6,13 @@
     <link href="{% static 'main/style.css' %}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>Diary-Home</title>
+    <title>Home</title>
 </head>
 
 <body>
     <div class="nav-container">
         <h1>
-            Jn's Diary 
+            Jn's Tracker 
         </h1>
     </div>
 
@@ -51,14 +51,14 @@
 
             {% empty %}
             <h2>
-                No Diary Found..
+                No Notes Found..
             </h2>
 
             {% endfor %}
 
             <!-- 顯示所有link -->
             <a href ="{% url 'main:create' %}"> Create</a>
-            <a href ="{% url 'main:index' %}"> View All Diary</a> 
+            <a href ="{% url 'main:index' %}"> View All Notes</a> 
             <!-- url只有django看得懂 會把網址寫成html然後回傳 -->
             <a href ="{% url 'main:signout' %}"> Logout</a>
         </div>

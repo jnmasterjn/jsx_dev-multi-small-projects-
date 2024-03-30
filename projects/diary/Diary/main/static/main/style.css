@@ -1,7 +1,7 @@
 
 .nav-container{
     margin: 10px auto;
-    padding-top: 2px;
+    padding-top: 20px;
     max-width: 600px; 
     /* 配上margin auto 所以會幫你擠到中間 */
     text-align: center;
